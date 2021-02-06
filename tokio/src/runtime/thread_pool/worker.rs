@@ -457,6 +457,9 @@ impl Core {
     }
 
     fn steal_work(&mut self, worker: &Worker) -> Option<Notified> {
+        // Never steal anything
+        return None;
+
         if !self.transition_to_searching(worker) {
             return None;
         }
